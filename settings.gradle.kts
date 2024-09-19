@@ -1,4 +1,4 @@
-include(":core:designsystem")
+include(":core:database")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
@@ -37,11 +37,11 @@ pluginManagement {
         gradlePluginPortal()
 
         // fetch snapshot plugins from sonatype
-        maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
+      /*  maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
             mavenContent {
                 snapshotsOnly()
             }
-        }
+        }*/
     }
 }
 dependencyResolutionManagement {
@@ -73,16 +73,21 @@ dependencyResolutionManagement {
         }
 
         // fetch snapshot libraries from sonatype
-        maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
+     /*   maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
             mavenContent {
                 snapshotsOnly()
             }
-        }
+        }*/
     }
 }
 
 rootProject.name = "PokedexCompose"
 include(":app")
-include(":core:database")
+include(":core:designsystem")
 
 
+include(":core:model")
+include(":core:test")
+include(":core:data")
+include(":core:network")
+include(":core:navigation")
