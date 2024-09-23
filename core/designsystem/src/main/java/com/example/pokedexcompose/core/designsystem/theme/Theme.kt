@@ -21,7 +21,7 @@ private val LocalColors = compositionLocalOf<Colors> {
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun Theme(
+fun PokedexTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     colors: Colors = if (darkTheme) {
         Colors.defaultDarkColors()
@@ -45,7 +45,7 @@ fun Theme(
     }
 }
 
-object Theme {
+object PokedexTheme {
     val colors: Colors
         @Composable
         @ReadOnlyComposable

@@ -1,4 +1,4 @@
-include(":core:database")
+include(":core:preview")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
@@ -84,11 +84,13 @@ dependencyResolutionManagement {
 rootProject.name = "PokedexCompose"
 include(":app")
 include(":core:designsystem")
-
-
 include(":core:model")
 include(":core:test")
 include(":core:data")
+include(":core:database")
 include(":core:network")
 include(":core:navigation")
 include(":core:viewmodel")
+
+
+include(":feature:home")
