@@ -5,7 +5,7 @@ import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.compositionLocalOf
 
-public val LocalComposeNavigator: ProvidableCompositionLocal<AppComposeNavigator<PokedexScreen>> =
+val LocalComposeNavigator: ProvidableCompositionLocal<AppComposeNavigator<PokedexScreen>> =
     compositionLocalOf {
         error(
             "No AppComposeNavigator provided! " +
@@ -16,7 +16,7 @@ public val LocalComposeNavigator: ProvidableCompositionLocal<AppComposeNavigator
 /**
  * Retrieves the current [AppComposeNavigator] at the call site's position in the hierarchy.
  */
-public val currentComposeNavigator: AppComposeNavigator<PokedexScreen>
+val currentComposeNavigator: AppComposeNavigator<PokedexScreen>
     @Composable
     @ReadOnlyComposable
     get() = LocalComposeNavigator.current

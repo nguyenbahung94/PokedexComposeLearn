@@ -1,5 +1,6 @@
 package com.example.pokedexcompose.core.network.di
 
+import com.example.pokedexcompose.core.network.BuildConfig
 import com.example.pokedexcompose.core.network.service.PokedexClient
 import com.example.pokedexcompose.core.network.service.PokedexService
 import com.skydoves.sandwich.retrofit.adapters.ApiResponseCallAdapterFactory
