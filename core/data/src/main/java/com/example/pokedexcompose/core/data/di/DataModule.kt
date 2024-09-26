@@ -1,5 +1,7 @@
 package com.example.pokedexcompose.core.data.di
 
+import com.example.pokedexcompose.core.data.repository.details.DetailsRepository
+import com.example.pokedexcompose.core.data.repository.details.DetailsRepositoryImpl
 import com.example.pokedexcompose.core.data.repository.home.HomeRepository
 import com.example.pokedexcompose.core.data.repository.home.HomeRepositoryImpl
 import dagger.Binds
@@ -13,4 +15,7 @@ internal interface DataModule {
 
   @Binds
   fun bindsMainRepository(homeRepositoryImpl: HomeRepositoryImpl): HomeRepository
+
+  @Binds
+  fun bindsDetailsRepository(detailsRepositoryImpl: DetailsRepositoryImpl): DetailsRepository
 }
