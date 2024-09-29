@@ -89,6 +89,7 @@ android {
 
 dependencies {
     implementation(projects.feature.home)
+    implementation(projects.feature.details)
 
     // cores
     implementation(projects.core.model)

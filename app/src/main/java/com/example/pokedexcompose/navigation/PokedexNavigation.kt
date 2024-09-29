@@ -4,6 +4,7 @@ import androidx.compose.animation.SharedTransitionScope
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.pokedexcompose.core.navigation.PokedexScreen
+import com.example.pokedexcompose.feature.details.PokedexDetails
 import com.example.pokedexcompose.feature.home.PokedexHome
 
 context(SharedTransitionScope)
@@ -15,6 +16,6 @@ fun NavGraphBuilder.pokedexNavigation() {
   composable<PokedexScreen.Details>(
     typeMap = PokedexScreen.Details.typeMap,
   ) {
-   // PokedexDetails(this)
+    PokedexDetails(this)
   }
 }
