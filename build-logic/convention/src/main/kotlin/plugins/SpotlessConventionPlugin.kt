@@ -22,7 +22,7 @@ class SpotlessConventionPlugin : Plugin<Project> {
                             "ktlint_function_naming_ignore_when_annotated_with" to "Composable"
                         )
                     )
-                    licenseHeaderFile(rootProject.file("spotless/spotless.license.kt"))
+                //    licenseHeaderFile(rootProject.file("spotless/spotless.license.kt"))
                     trimTrailingWhitespace()
                     endWithNewline()
                 }
