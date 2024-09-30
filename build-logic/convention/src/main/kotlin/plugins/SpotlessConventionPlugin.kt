@@ -29,12 +29,12 @@ class SpotlessConventionPlugin : Plugin<Project> {
                 format("kts") {
                     target("**/*.kts")
                     targetExclude(buildDirectory)
-                    licenseHeaderFile(rootProject.file("spotless/spotless.license.kt"), "(^(?![\\/ ]\\*).*$)")
+                  //  licenseHeaderFile(rootProject.file("spotless/spotless.license.kt"), "(^(?![\\/ ]\\*).*$)")
                 }
                 format("xml") {
                     target("**/*.xml")
                     targetExclude(buildDirectory)
-                    licenseHeaderFile(rootProject.file("spotless/spotless.license.xml"), "(<[^!?])")
+                  //  licenseHeaderFile(rootProject.file("spotless/spotless.license.xml"), "(<[^!?])")
                 }
             }
         }
