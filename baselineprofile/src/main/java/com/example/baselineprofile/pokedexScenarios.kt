@@ -1,6 +1,7 @@
 package com.example.baselineprofile
 
 import androidx.benchmark.macro.MacrobenchmarkScope
+import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.BySelector
 import androidx.test.uiautomator.Direction
@@ -11,10 +12,10 @@ import androidx.test.uiautomator.Until
 fun MacrobenchmarkScope.pokedexScenarios() {
     // Pokedex Home
     explorePokedexHome()
-    navigateFromHomeToDetails()
+  //  navigateFromHomeToDetails()
 
     // Pokedex Details
-    detailsWaitForContent()
+   // detailsWaitForContent()
 
 }
 
@@ -35,7 +36,7 @@ fun MacrobenchmarkScope.pokedexListScrollDownUp() = device.apply {
 fun MacrobenchmarkScope.navigateFromHomeToDetails() = device.apply {
     val channelList = waitAndFindObject(By.res("Pokemon"), 15_000L)
     channelList.click()
-    waitForIdle()
+   UiDevice.getInstance(InstrumentationRegistry.getInstrumentation()).waitForIdle()
 }
 
 fun MacrobenchmarkScope.detailsWaitForContent() = device.apply {
