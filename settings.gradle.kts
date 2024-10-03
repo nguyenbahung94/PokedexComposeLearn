@@ -95,3 +95,4 @@ include(":core:viewmodel")
 
 include(":feature:home")
 include(":feature:details")
+include(":baselineprofile")

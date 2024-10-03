@@ -14,8 +14,8 @@ dependencies {
     implementation(projects.core.model)
     implementation(libs.androidx.core)
     implementation(libs.kotlinx.coroutines.android)
-
     api(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.runtime)
 
     implementation(libs.kotlinx.serialization.json)
 }

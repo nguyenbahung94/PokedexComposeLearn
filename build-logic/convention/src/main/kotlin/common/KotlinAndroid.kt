@@ -43,13 +43,13 @@ internal fun Project.configureKotlinAndroid(
             freeCompilerArgs.set(
                 freeCompilerArgs.getOrElse(emptyList()) + listOf(
                     "-Xcontext-receivers",
-                    "-Xopt-in=kotlin.RequiresOptIn",
+                    "-opt-in=kotlin.RequiresOptIn",
                     // Enable experimental coroutines APIs, including Flow
-                    "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                    "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
                     // Enable experimental compose APIs
-                    "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api",
-                    "-Xopt-in=androidx.lifecycle.compose.ExperimentalLifecycleComposeApi",
-                    "-Xopt-in=androidx.compose.animation.ExperimentalSharedTransitionApi",
+                    "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+                    "-opt-in=androidx.lifecycle.compose.ExperimentalLifecycleComposeApi",
+                    "-opt-in=androidx.compose.animation.ExperimentalSharedTransitionApi",
                 )
             )
 

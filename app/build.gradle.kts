@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.pokedexCompose.android.hilt)
     alias(libs.plugins.pokedexCompose.spotless)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
@@ -16,7 +17,7 @@ android {
         applicationId = "com.example.pokedexcompose"
         versionCode = 1
         versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.pokedexcompose.AppTestRunner"
     }
 
     signingConfigs {
@@ -25,13 +26,6 @@ android {
         if (localPropertyFile.canRead()) {
             properties.load(FileInputStream("$rootDir/local.properties"))
         }
-
-        create("release") {
-         /*   storeFile = file(properties["storeFile"]?.toString())
-            storePassword = properties["storePassword"]?.toString()
-            keyAlias = properties["keyAlias"]?.toString()
-            keyPassword = properties["keyPassword"]?.toString()*/
-        }
     }
 
     buildTypes {
@@ -39,7 +33,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles("proguard-rules.pro",)
-            signingConfig = signingConfigs.getByName("release")
+          //  signingConfig = signingConfigs.getByName("release")
 
             kotlinOptions {
                 freeCompilerArgs += listOf(
@@ -87,6 +81,10 @@ android {
     }
 }
 
+composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+}
+
 dependencies {
     implementation(projects.feature.home)
     implementation(projects.feature.details)
@@ -109,6 +107,9 @@ dependencies {
     androidTestImplementation(libs.hilt.testing)
     kspAndroidTest(libs.hilt.compiler)
 
+    // baseline profile
+    implementation(libs.profileinstaller)
+    baselineProfile(project(":baselineprofile"))
 
     testImplementation(libs.junit)
     testImplementation(libs.turbine)
@@ -119,5 +120,5 @@ dependencies {
     androidTestImplementation(libs.truth)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
-    androidTestImplementation(libs.android.test.runner)
+  //  androidTestImplementation(libs.android.test.runner)
 }
